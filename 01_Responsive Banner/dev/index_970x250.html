@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ad.size" content="width=970,height=250">
+    <title>Royal Canin</title>
+    <link rel="stylesheet" href="style.css" inline>
+  </head>
+
+    <body>
+
+      <div id="banner" class="banner" style="width:970px; height:250px;">
+
+
+        <!-- IMAGE 1 : Dog 01 -->
+        <div id="image-container-1" class="image-container hide">
+          <img src="assets/dog_cutout_01.png" alt=""/>
+        </div>
+
+        <!-- IMAGE 2 : Dog 02 -->
+        <div id="image-container-2" class="image-container hide">
+            <img src="assets/dog_cutout_02.png" alt=""/>
+        </div>
+
+        <!-- IMAGE 3: Royal Canin Logo White-->
+        <div id="image-container-3" class="image-container hide">
+          <img src="assets/logo_white.svg" alt=""/>
+        </div>
+
+        <!-- IMAGE 4: Website link White -->
+        <div id="image-container-4" class="image-container hide">
+          <img src="assets/website_white.svg" alt=""/>
+        </div>
+
+        <!-- IMAGE 5: Royal Canin Logo Red-->
+        <div id="image-container-5" class="image-container hide">
+          <img src="assets/logo.svg" alt=""/>
+        </div>
+
+        <!-- IMAGE 6: Website link White -->
+        <div id="image-container-6" class="image-container hide">
+          <img src="assets/website.svg" alt=""/>
+        </div>
+
+
+
+        <!--  BORDER -->
+        <div id="border"></div>
+
+        <div id="debug">SIZE: </div>
+    	</div>
+    </body>
+
+
+  <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+  <script>
+    if (!Enabler.isInitialized()) {
+      Enabler.addEventListener(
+        studio.events.StudioEvent.INIT,
+        enablerInitialized);
+    } else {
+       enablerInitialized();
+    }
+    function enablerInitialized() {
+      // Enabler initialized.
+      // In App ads are rendered offscreen so animation should wait for
+      // the visible event. These are simulated with delays in the local
+      // environment.
+      if (!Enabler.isVisible()) {
+        Enabler.addEventListener(
+          studio.events.StudioEvent.VISIBLE,
+          adVisible);
+      } else {
+         adVisible();
+      }
+    }
+    function adVisible() {
+      // Ad visible, start ad/animation.
+    }
+  </script>
+
+  <script type="text/javascript" src="init.js" inline></script>
+  <script type="text/javascript" src="animation.js" inline></script>
+  <script type="text/javascript" src="layout.js" inline></script>
+  <script type="text/javascript" src="breakPoints.js" inline></script>
+  <script type="text/javascript">
+    init();
+  </script>
+
+</html>
